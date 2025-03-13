@@ -17,8 +17,8 @@ export const prepGRPCPayload = (
   const metadata = {
     user: headers.user ? headers.user : '{}',
     user_agent: headers['user-agent'] || 'axios/0.19.2',
-    token: req.signedCookies.token || '',
-    referer: headers.referer || '',
+    token: req?.signedCookies?.token || '',
+    referer: headers?.referer || '',
     request_id: uuidv4(),
     ip: ip || '127.0.0.1',
   };

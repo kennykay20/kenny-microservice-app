@@ -41,7 +41,6 @@ export class ProxyService {
     try {
       const { data: reqData, grpcMetadata } = prepGRPCPayload(req, data);
       const response = await svc[endpoint](reqData, grpcMetadata).toPromise();
-
       if (!returnHttpResponse) {
         return response;
       }
